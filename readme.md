@@ -127,7 +127,7 @@ Displaying hello world again! isn't that interesting. Make an input that changes
    ```js
   <input value={this.state.helloWorld} onChange={(e) => this.setState({helloWorld:e.target.value})}>
   ```
-  in React. It tells Angular that we want to initially use the helloWorld variable as the value of the input but, we also want the user to be able to change the the input AND change the helloWorld variable at the same time.
+  in React. It tells Angular that we want to initially use the ```helloWorld``` variable as the value of the input but, we also want the user to be able to change the the input AND change the ```helloWorld``` variable at the same time.
 
 ---
 
