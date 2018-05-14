@@ -16,7 +16,7 @@ The angular CLI makes creating angular applications easier by downloading all of
 ##### Quick note about Angular vs React
 
   ###### Typescript 
-Angular uses Typescript instead of regular Javascript. Typescript is a superset of Javascript that lets you "type check" variables/functions/etc. You can use it make sure a variable is what it is supposed to be (string/number/function/etc). Typescript just gives you extra features that Javascript doesn't have. It makes writing code less buggy because it will run an extra check before compiling the typescript into javascript.
+Angular uses Typescript instead of regular Javascript. Typescript is a superset of Javascript that lets you "type check" variables/functions/etc. You can use it to make sure a variable is what it is supposed to be (string/number/function/etc). Typescript just gives you extra features that Javascript doesn't have. It makes writing code less buggy because it will run an extra check before compiling the typescript into javascript.
 
   ###### No Virtual DOM
 Angular doesn't have a virtual DOM like React does. It directly manipulates the DOM so libraries like Bootstrap and JQuery work right out of the box with Angular.
@@ -60,7 +60,7 @@ Make the app component have an h2 tag display hello world!.
 <summary>Solution</summary>
 
 <details>
-<summary> app.component.html</summary>
+<summary> <code>app.component.html</code></summary>
 
 ```html
 <h2>hello world!</h2>
@@ -88,7 +88,7 @@ Make a h3 tag display hello world again! using interpolation underneath the h2 t
 <details>
 <summary>Solution</summary>
   <details>
-  <summary>app.component.html</summary>
+  <summary><code>app.component.html</code></summary>
 
 ```html
 <h2>hello world!</h2>
@@ -96,10 +96,8 @@ Make a h3 tag display hello world again! using interpolation underneath the h2 t
 ```
 </details>
 
----
-
 <details>
-<summary>app.component.ts</summary>
+<summary><code>app.component.ts</code></summary>
 
 ```js
 import { Component } from '@angular/core';
@@ -112,8 +110,76 @@ import { Component } from '@angular/core';
 export class AppComponent {
   helloWorld = 'hello world again!';
 }
+
 ```
 </details>
 
 </details>
+
+---
+## TASK 4
+Displaying hello world again! isn't that interesting. Make an input that changes that what is displayed in the h3 tag.
+
+---
+##### A word about ngModel and what it is like in React.
+
+  Using **[(ngModel)]** (more specifically the [()]) is the way to tell Angular that we are going to use two way data binding. This is like saying
+   ```js
+  <input value={this.state.helloWorld} onChange={(e) => this.setState({helloWorld:e.target.value})}>
+  ```
+  in React. It tells Angular that we want to initially use the helloWorld variable as the value of the input but, we also want the user to be able to change the the input AND change the helloWorld variable at the same time.
+
+---
+
+<details>
+<summary>Detailed Instructions</summary>
+
+  1. First we need to import the FormsModule from Angular. Go to ```app.module.ts``` and ```import { FormsModule } from '@angular/core'``` 
+  2. Add FormsModule to the import in @NgModule.
+  2. Go to the ```app.component.html``` file and add ```<input type="text" [(ngModel)]="helloWorld">``` above the h2 tag.
+
+</details>
+
+<details>
+<summary>Solution</summary>
+  <details>
+  <summary><code>app.module.ts</code></summary>
+
+```js
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+</details>
+
+<details>
+<summary><code>app.component.html</code></summary>
+
+```js
+<h2>hello world!</h2>
+<input type="text" [(ngModel)]="helloWorld">
+<h3>{{ helloWorld }}</h3>
+```
+</details>
+
+</details>
+
+
 
