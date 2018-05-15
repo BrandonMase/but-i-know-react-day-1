@@ -1,4 +1,8 @@
-# Day 1
+---
+description: Let's get on with the intros.
+---
+
+# Introduction
 
 ## Introduction
 
@@ -6,7 +10,7 @@ I'm banging my head against the wall, hoping the next one knocks me out so I fee
 
 ### Who this is for and not for
 
-If you know some Javascript, you're probably golden. Know how to make a variable, function, class? Can google your way through HTML and CSS? Yeah you'll be fine.If you don't know these things then well, you might want to start there. I make a lot of references to React in these tutorials so people that have knowledge in React can see where the similarities lie but, you don't need to know React to use this. This work can't be record, reproduced or, reviewed without express written consent from the National Football League&trade;. Just kidding, do what you want with it, except sell it.
+If you know some Javascript, you're probably golden. Know how to make a variable, function, class? Can google your way through HTML and CSS? Yeah you'll be fine. If you don't know these things then well, you might want to start there. I make a lot of references to React in these tutorials so people that have knowledge in React can see where the similarities lie but, you don't need to know React to use this. This work can't be record, reproduced or, reviewed without express written consent from the National Football League\(tm\). Just kidding, do what you want with it, except sell it.
 
 ### Let's do work together
 
